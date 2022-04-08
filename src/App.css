@@ -1,16 +1,14 @@
 .App {
   text-align: center;
+  background-color: plum;
+  color: white;
+  font-size: calc(10px + 2vmin);
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+input::placeholder {
+  text-align: center;
+  font-size: 1.2em;
+  font-style: italic;
 }
 
 .App-header {
@@ -26,13 +24,4 @@
 
 .App-link {
   color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
 }
