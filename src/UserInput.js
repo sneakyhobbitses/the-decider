@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './index';
+import ActivityList from './ActivityList';
 
 class UserInput extends React.Component {
     constructor(props) {
@@ -16,6 +17,6 @@ class UserInput extends React.Component {
             </div>
         )
     }
-}
+};
 
 export default UserInput;
