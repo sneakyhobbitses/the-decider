@@ -4,16 +4,30 @@ import App from './index';
 import UserInput from './UserInput';
 
 class ActivityList extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            activityLists: [
+                {
+                    key: 'creative',
+                    activities: ['synth time', 'drawing']
+                },
+                {
+                    key: 'chores',
+                    activities: ['clean livingroom table', 'do dishes', 'vaccum']
+                },
+                {
+                    key: 'self-care',
+                    activities: ['stretch', 'do a journaling exercise']
+            }
+        ]
+    }
+}
     render() {
-        const activityCategories = [
-            'creative time',
-            'chores',
-            'self-care'
-    ]
         return (
                 <div>
                     <ul>
-                        {activityCategories.map(listedActivities => <li>{listedActivities}</li>)}
+                        {activities.map(listedActivities => <li>{listedActivities}</li>)}
                     </ul>
                 </div>
         )

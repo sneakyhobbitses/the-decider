@@ -12,7 +12,7 @@ class UserInput extends React.Component {
         return (
             <div className='UserInput'>
                 <span>
-                    <p><input type="text" placeholder="enter a new option"></input> <button>ok</button></p>
+                    <p><input type="text" placeholder="enter a new option" onClick={() => {this.props.buttonClicker()}}></input> <button>ok</button></p>
                 </span>
             </div>
         )
