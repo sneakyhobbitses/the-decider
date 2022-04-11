@@ -9,6 +9,7 @@ function App() {
         <p>henlo</p>
         <p>this is where we will make decisions</p>
         <p>how exciting</p>
+        <p>changes please ignore</p>
 
         <ActivityList />
       </span>
