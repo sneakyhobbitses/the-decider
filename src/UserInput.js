@@ -6,13 +6,25 @@ import ActivityList from './ActivityList';
 class UserInput extends React.Component {
     constructor(props) {
         super(props);
+        this.state = { value: "" };
+        this.handleChange = this.handleChange.bind(this);
     }
-
-    render () {
+    handleChange(event) {
+        this.setState({ value: event.target.value })
+    }
+    render() {
         return (
             <div className='UserInput'>
                 <span>
-                    <p><input type="text" placeholder="enter a new option" onClick={() => {this.props.buttonClicker()}}></input> <button>ok</button></p>
+                    <p>
+                        <input
+                            type="text"
+                            placeholder="enter a new option"
+                            value={this.state.value}
+                            onChange={this.handleChange}
+                        />
+                        <button onClick={() => { this.props.buttonClicker() }}>ok</button>
+                    </p>
                 </span>
             </div>
         )
