@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import ReactDOM from 'react-dom';
 import App from './index';
 import UserInput from './UserInput';
@@ -30,22 +30,20 @@ class ActivityList extends React.Component {
     }
 
     updateActivities(newActivity) {
-        // const updatedActivs = this.state.activities.map(curActs => ({
-        //     ...curActs,
-        //     activities: curActs.key === activities ? '' : curActs.updatedActivs
-        // }));
-        alert('suh dood')
+        alert('you did it')
+        let updatedActivities = [...this.state.activities, newActivity]
         this.setState({
-            activities: this.state.activities.push(newActivity)
+            activities: updatedActivities
         });
     }
 
     render() {
+        
         return (
             <div>
                 <UserInput buttonClicker={this.updateActivities} />
                 <ul>
-                    {this.state.activities.map(listedActivities => <li key={listedActivities}>{listedActivities}</li>)}
+                    {this.state.activities.map(listedActivities => <li>{listedActivities}</li>)}
                 </ul>
             </div>
         )
