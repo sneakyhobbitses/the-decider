@@ -13,6 +13,7 @@ class UserInput extends React.Component {
         this.setState({ value: event.target.value })
     }
     render() {
+
         return (
             <div className='UserInput'>
                 <span>
@@ -23,7 +24,7 @@ class UserInput extends React.Component {
                             value={this.state.value}
                             onChange={this.handleChange}
                         />
-                        <button onClick={() => { this.props.buttonClicker() }}>ok</button>
+                        <button onClick={() => { this.props.buttonClicker(this.state.value) }}>ok</button>
                     </p>
                 </span>
             </div>

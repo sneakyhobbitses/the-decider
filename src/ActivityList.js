@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import ReactDOM from 'react-dom';
 import App from './index';
 import UserInput from './UserInput';
@@ -30,16 +30,17 @@ class ActivityList extends React.Component {
     }
 
     updateActivities(newActivity) {
-        alert('you did it')
         let updatedActivities = [...this.state.activities, newActivity]
         this.setState({
             activities: updatedActivities
         });
+        console.log(updatedActivities)
     }
 
     render() {
-        
+
         return (
+
             <div>
                 <UserInput buttonClicker={this.updateActivities} />
                 <ul>
