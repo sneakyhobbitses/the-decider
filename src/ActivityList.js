@@ -7,26 +7,27 @@ class ActivityList extends React.Component {
     constructor(props) {
         super(props);
 
-        this.state = { activities: ['synth time', 'do dishes', 'stretch', 'do a journaling exercise'] };
         this.updateActivities = this.updateActivities.bind(this);
 
-        // Version 2 gets categories
-        // this.state = {
-        //     activityLists: [
-        //         {
-        //             key: 'creative',
-        //             activities: ['synth time', 'drawing']
-        //         },
-        //         {
-        //             key: 'chores',
-        //             activities: ['clean livingroom table', 'do dishes', 'vaccum']
-        //         },
-        //         {
-        //             key: 'self-care',
-        //             activities: ['stretch', 'do a journaling exercise']
-        //         }
-        //     ]
-        // }
+        this.state = {
+            activityLists: [
+                {
+                    key: 'creative',
+                    value: 'creative',
+                    activities: ['synth time', 'drawing']
+                },
+                {
+                    key: 'chores',
+                    value: 'chores',
+                    activities: ['clean livingroom table', 'do dishes', 'vaccum']
+                },
+                {
+                    key: 'self-care',
+                    value: 'self-care',
+                    activities: ['stretch', 'do a journaling exercise']
+                }
+            ]
+        }
     }
 
     updateActivities(newActivity) {
@@ -34,19 +35,19 @@ class ActivityList extends React.Component {
         this.setState({
             activities: updatedActivities
         });
-        console.log(updatedActivities)
     }
 
-    render() {
 
+
+    render() {
         return (
 
             <div>
                 <UserInput buttonClicker={this.updateActivities} />
                 <ul>
-                    {this.state.activities.map(listedActivities => <li>{listedActivities}</li>)}
+                    {this.state.activityLists.map(listedActivities => <li> {listedActivities.key} </li>)}
                 </ul>
-            </div>
+            </div >
         )
     }
 }
