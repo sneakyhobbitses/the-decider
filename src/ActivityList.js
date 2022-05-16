@@ -8,22 +8,23 @@ class ActivityList extends React.Component {
         super(props);
 
         this.updateActivities = this.updateActivities.bind(this);
+        this.displayList = this.displayList.bind(this);
 
         this.state = {
             activityLists: [
                 {
                     key: 'creative',
-                    value: 'creative',
+                    category: 'creative',
                     activities: ['synth time', 'drawing']
                 },
                 {
                     key: 'chores',
-                    value: 'chores',
+                    category: 'chores',
                     activities: ['clean livingroom table', 'do dishes', 'vaccum']
                 },
                 {
                     key: 'self-care',
-                    value: 'self-care',
+                    category: 'self-care',
                     activities: ['stretch', 'do a journaling exercise']
                 }
             ]
@@ -31,22 +32,27 @@ class ActivityList extends React.Component {
     }
 
     updateActivities(newActivity) {
-        let updatedActivities = [...this.state.activities, newActivity]
+        let updatedActivities = [...this.state.activityLists, newActivity]
         this.setState({
             activities: updatedActivities
         });
     }
 
-
+    displayList(selection) {
+        // console.log(selection);
+        selection.map(activity => console.log(activity))
+    }
 
     render() {
         return (
 
             <div>
-                <UserInput buttonClicker={this.updateActivities} />
-                <ul>
-                    {this.state.activityLists.map(listedActivities => <li> {listedActivities.key} </li>)}
-                </ul>
+                {/* <UserInput buttonClicker={this.updateActivities} /> */}
+                {this.state.activityLists.map(categories =>
+                    <li onClick={() => {
+                        this.displayList(categories.activities);
+                    }}> {categories.key} </li>
+                )}
             </div >
         )
     }
