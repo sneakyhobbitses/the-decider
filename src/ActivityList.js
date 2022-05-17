@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import ReactDOM from 'react-dom';
 import App from './index';
 import UserInput from './UserInput';
+import ListDisplay from './ListDisplay';
 
 class ActivityList extends React.Component {
     constructor(props) {
@@ -20,7 +21,7 @@ class ActivityList extends React.Component {
                 {
                     key: 'chores',
                     category: 'chores',
-                    activities: ['clean livingroom table', 'do dishes', 'vaccum']
+                    activities: ['tidy coffee table', 'do dishes', 'vacuum']
                 },
                 {
                     key: 'self-care',
@@ -39,8 +40,7 @@ class ActivityList extends React.Component {
     }
 
     displayList(selection) {
-        // console.log(selection);
-        selection.map(activity => console.log(activity))
+        this.state.activityLists.map(selection => { category.activities })
     }
 
     render() {
@@ -49,10 +49,11 @@ class ActivityList extends React.Component {
             <div>
                 {/* <UserInput buttonClicker={this.updateActivities} /> */}
                 {this.state.activityLists.map(categories =>
-                    <li onClick={() => {
-                        this.displayList(categories.activities);
-                    }}> {categories.key} </li>
+                    <li> {categories.key} </li>
                 )}
+                <ListDisplay category='chores' listClick={() => { this.displayList('chores') }} />
+                <ListDisplay category='creative' listClick={() => { this.displayList('creative') }} />
+                <ListDisplay category='self-care' listClick={() => { this.displayList('self-care') }} />
             </div >
         )
     }
