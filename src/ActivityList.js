@@ -11,6 +11,7 @@ class ActivityList extends React.Component {
         this.updateActivities = this.updateActivities.bind(this);
         this.displayList = this.displayList.bind(this);
 
+
         this.state = {
             activityLists: [
                 {
@@ -39,21 +40,36 @@ class ActivityList extends React.Component {
         });
     }
 
-    displayList(selection) {
-        this.state.activityLists.map(selection => { category.activities })
+    //curStats => ({
+    //    ...curStats,
+    //    currentValue: curStats.key === currentKey ? 0 : curStats.currentValue
+    //}));
+
+    displayList(category) {
+        let selectedList = this.state.activityLists.map(
+            categorySelection => categorySelection.activities
+        );
+        return (
+            console.log(selectedList)
+        )
     }
 
+
+    // trying to get lists to display on click
+
     render() {
+
         return (
 
             <div>
+
                 {/* <UserInput buttonClicker={this.updateActivities} /> */}
-                {this.state.activityLists.map(categories =>
+                {/* {this.state.activityLists.map(categories =>
                     <li> {categories.key} </li>
-                )}
-                <ListDisplay category='chores' listClick={() => { this.displayList('chores') }} />
-                <ListDisplay category='creative' listClick={() => { this.displayList('creative') }} />
-                <ListDisplay category='self-care' listClick={() => { this.displayList('self-care') }} />
+                )} */}
+                <ListDisplay category="creative" listClick={() => { this.displayList('creative') }} selection='' />
+                <ListDisplay category="chores" listClick={() => { this.displayList('chores') }} selection='' />
+                <ListDisplay category="self-care" listClick={() => { this.displayList('self-care') }} selection='' />
             </div >
         )
     }
